@@ -1,8 +1,16 @@
 .flower-list {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
     height: fit-content;
     border: 5px double #A7AC29;
+}
+
+.flower-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
@@ -10,6 +18,10 @@ img {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: fit-content;
     border: 5px double #A7AC29;
 }
