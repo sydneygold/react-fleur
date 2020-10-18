@@ -15,13 +15,30 @@ export default class Main extends Component {
             .then(data => this.setState({flowers: data}))
     }
 
+    filterOutFlower = (flowerToBeRemoved) => {
+        return this.state.bouquet.filter(flower => flower !== flowerToBeRemoved)
+    }
 
+    selectFlower = (flower) => {
+        if (!this.state.bouquet.includes(flower)) {
+            this.setState({bouquet: [...this.state.bouquet, flower]}) 
+        }
+        else {
+            this.setState({bouquet: this.filterOutFlower(flower)})
+        }
+    }
 
     render(){
         return (
             <main className="MainPage">
-                <Bouquet />
-                <AllFlowers flowers={this.state.flowers}/>
+                <Bouquet 
+                    bouquet={this.state.bouquet}
+                    selectFlower={this.selectFlower}
+                />
+                <AllFlowers
+                    flowers={this.state.flowers}
+                    selectFlower={this.selectFlower}
+                />
             </main>
         )
     }

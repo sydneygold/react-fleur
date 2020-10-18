@@ -5,11 +5,24 @@
     border: 5px double #A7AC29;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+}
+
 img {
     height: 300px;
 }
 
+.bouquet {
+    display: flex;
+    flex-flow: row wrap;
+}
+
 .card {
+    display: flex;
+    flex-flow: row wrap;
     height: fit-content;
     border: 5px double #A7AC29;
 }
+
